@@ -5,6 +5,7 @@ Compatible with all amazon store
 
 ## Requirement
 Python 3.x
+
 Python Library = [ 'requests', 'bs4' ]
 
 ## How to install
