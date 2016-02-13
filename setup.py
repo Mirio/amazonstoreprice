@@ -5,7 +5,7 @@ setup(
     packages=['amazonstoreprice'],
     package_dir={'amazonestoreprice': 'amazonstoreprice'},
     version='0.1',
-    install_requires=['requests', 'bs4'],
+    install_requires=['requests', 'beautifulsoup4'],
     description='Find the price on Amazon store starting from url',
     author='Alessandro Sbarbati',
     author_email='miriodev@gmail.com',

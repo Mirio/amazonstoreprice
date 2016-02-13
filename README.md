@@ -6,7 +6,7 @@ Compatible with all amazon store
 ## Requirement
 Python 3.x
 
-Python Library = [ 'requests', 'bs4' ]
+Python Library = [ 'requests', 'beautifulsoup4' ]
 
 ## How to install
 ```
