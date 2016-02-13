@@ -3,7 +3,7 @@ This module find the price from url given
 
 Compatible with all amazon store
 
-[![Build Status](https://travis-ci.org/Mirio/amazonstore-price.svg?branch=0.1)](https://travis-ci.org/Mirio/amazonstore-price)[![PyPI](https://img.shields.io/pypi/dm/amazonstoreprice.svg)]()
+[![Build Status](https://travis-ci.org/Mirio/amazonstore-price.svg?branch=0.1)](https://travis-ci.org/Mirio/amazonstore-price) [![PyPI](https://img.shields.io/pypi/dm/amazonstoreprice.svg)]() [![Github All Releases](https://img.shields.io/github/downloads/mirio/amazonstoreprice/total.svg)]()
 
 ## Requirement
 Python 3.x
@@ -32,4 +32,10 @@ url = "http://www.amazon.it/Inside-Out-Ronnie-Del-Carmen/dp/B016LMC90O/" \
       "ref=sr_1_1?ie=UTF8&qid=1455389197&sr=8-1&keywords=inside+out"
 pricelib = AmazonStorePrice()
 print(pricelib.getprice(url, retry_ontemp=True))
+```
+
+Output:
+```
+$ python example_getprice.py
+15.99
 ```
