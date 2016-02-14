@@ -8,7 +8,9 @@ Compatible with all amazon store
 
 ## Link
 Documentation: http://amazonstoreprice.readthedocs.org/
+
 Bug Tracker: https://github.com/Mirio/amazonstoreprice/issues
+
 GitHub: https://github.com/Mirio/amazonstoreprice
 
 
