@@ -3,7 +3,13 @@ This module find the price from url given
 
 Compatible with all amazon store
 
-[![Build Status](https://travis-ci.org/Mirio/amazonstore-price.svg?branch=0.1)](https://travis-ci.org/Mirio/amazonstore-price) [![PyPI](https://img.shields.io/pypi/dm/amazonstoreprice.svg)]() [![Github All Releases](https://img.shields.io/github/downloads/mirio/amazonstoreprice/total.svg)]() [![Documentation Status](https://readthedocs.org/projects/amazonstoreprice/badge/?version=latest)](http://amazonstoreprice.readthedocs.org/en/latest/?badge=latest)
+[![Build Status](https://travis-ci.org/Mirio/amazonstoreprice.svg?branch=0.1)](https://travis-ci.org/Mirio/amazonstoreprice) [![PyPI](https://img.shields.io/pypi/dm/amazonstoreprice.svg)]() [![Github All Releases](https://img.shields.io/github/downloads/mirio/amazonstoreprice/total.svg)]() [![Documentation Status](https://readthedocs.org/projects/amazonstoreprice/badge/?version=latest)](http://amazonstoreprice.readthedocs.org/en/latest/?badge=latest)
+
+
+## Link
+Documentation: http://amazonstoreprice.readthedocs.org/
+Bug Tracker: https://github.com/Mirio/amazonstoreprice/issues
+GitHub: https://github.com/Mirio/amazonstoreprice
 
 
 ## Requirement
