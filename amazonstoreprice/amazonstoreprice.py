@@ -9,9 +9,12 @@ class AmazonStorePrice:
 
     def normalizeurl(self, url):
         """
-        :desc clean the url from referal and other stuff
-        :param url: amazon url
+        clean the url from referal and other stuff
+
+        :param url(string): amazon url
+
         :return: string(url cleaned)
+
         """
         if "://www.amazon" in url:
             return url.split("/ref=")[0]
@@ -20,9 +23,12 @@ class AmazonStorePrice:
 
     def normalizeprice(self, price):
         """
-        :desc remove the currenty from price
-        :param price: price tag find on amazon store
+        remove the currenty from price
+
+        :param price(string): price tag find on amazon store
+
         :return: float(price cleaned)
+
         """
         listreplace = ["EUR ", "$", "£"]
         for replacestring in listreplace:
@@ -31,9 +37,12 @@ class AmazonStorePrice:
 
     def getpage(self, url, retry_ontemp=False):
         """
-        :desc Get the page and raise if status_code is not equal to 200
-        :param url: normalized(url)
-        :param retry_ontemp: if true, retry on 503 error
+        Get the page and raise if status_code is not equal to 200
+
+        :param url(string): normalized(url)
+
+        :param retry_ontemp(bool): if true, retry on 503 error
+
         :return: bs4(html)
         """
         url = self.normalizeurl(url)
@@ -53,9 +62,12 @@ class AmazonStorePrice:
 
     def getprice(self, url, retry_ontemp=False):
         """
-        :desc Find the price on AmazonStore starting from URL
-        :param url: url
-        :param retry_ontemp: if true, retry on 503 error
+        Find the price on AmazonStore starting from URL
+
+        :param url(string): url
+
+        :param retry_ontemp(bool): if true, retry on 503 error
+
         :return: float(price cleaned)
         """
         body_content = self.getpage(self.normalizeurl(url), retry_ontemp=retry_ontemp)

@@ -94,9 +94,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/amazonstoreprice.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/AmazonStorePrice.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/amazonstoreprice.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/AmazonStorePrice.qhc"
 
 .PHONY: applehelp
 applehelp:
@@ -113,8 +113,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/amazonstoreprice"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/amazonstoreprice"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/AmazonStorePrice"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/AmazonStorePrice"
 	@echo "# devhelp"
 
 .PHONY: epub
