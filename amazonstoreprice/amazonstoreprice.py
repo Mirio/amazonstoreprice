@@ -1,4 +1,6 @@
-from amazonstoreprice.exception import UrlNotAmazon, PageNotFound, StoreTemporaryUnavailable, RequestGenericError
+from amazonstoreprice.exception import UrlNotAmazon, PageNotFound
+from amazonstoreprice.exception import StoreTemporaryUnavailable
+from amazonstoreprice.exception import RequestGenericError, PriceNotFound
 from bs4 import BeautifulSoup
 import requests
 
@@ -17,7 +19,8 @@ class AmazonStorePrice:
         if "://www.amazon" in url:
             return url.split("/ref=")[0]
         else:
-            raise UrlNotAmazon("Please check the url, it doesn't contain www.amazon*")
+            raise UrlNotAmazon(
+                "Please check the url, it doesn't contain www.amazon*")
 
     def normalizeprice(self, price):
         """
@@ -31,7 +34,10 @@ class AmazonStorePrice:
         listreplace = ["EUR ", "$", "£"]
         for replacestring in listreplace:
             price = price.replace(replacestring, "")
-        return float(price.replace(",", "."))
+        try:
+            return float(price.replace(",", "."))
+        except ValueError:
+            raise PriceNotFound("Price is not available.")
 
     def getpage(self, url, retry_ontemp=False):
         """
@@ -48,15 +54,18 @@ class AmazonStorePrice:
         if req.status_code == 200:
             return BeautifulSoup(req.text, "html.parser")
         elif req.status_code == 404:
-            raise PageNotFound("Page not found, please check url" % req.status_code)
+            raise PageNotFound(
+                "Page not found, please check url" % req.status_code)
         elif req.status_code == 503:
             if retry_ontemp:
                 return self.getpage(url, retry_ontemp=retry_ontemp)
             else:
                 raise StoreTemporaryUnavailable(
-                    "The Store return 503 code, Service temporarily unavailable, please retry")
+                    "The Store return 503 code, Service temporarily "
+                    "unavailable, please retry")
         else:
-            raise RequestGenericError("Return Code: %s, please check url" % req.status_code)
+            raise RequestGenericError(
+                "Return Code: %s, please check url" % req.status_code)
 
     def getprice(self, url, retry_ontemp=False):
         """
@@ -68,5 +77,7 @@ class AmazonStorePrice:
 
         :return: float(price cleaned)
         """
-        body_content = self.getpage(self.normalizeurl(url), retry_ontemp=retry_ontemp)
-        return self.normalizeprice(body_content.find("span", {"class": "a-color-price"}).contents[0])
+        body_content = self.getpage(self.normalizeurl(url),
+                                    retry_ontemp=retry_ontemp)
+        return self.normalizeprice(body_content.find(
+            "span", {"class": "a-color-price"}).contents[0])

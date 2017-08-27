@@ -12,3 +12,6 @@ class StoreTemporaryUnavailable(Exception):
 
 class RequestGenericError(Exception):
     pass
+
+class PriceNotFound(Exception):
+    pass
