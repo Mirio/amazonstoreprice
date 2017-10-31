@@ -18,6 +18,8 @@ class AmazonStorePrice:
         """
         if "://www.amazon" in url:
             return url.split("/ref=")[0]
+        elif ":://amzn.eu" in url:
+            return url
         else:
             raise UrlNotAmazon(
                 "Please check the url, it doesn't contain www.amazon*")
