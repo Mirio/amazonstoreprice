@@ -1,12 +1,19 @@
-from distutils.core import setup
+import setuptools
 
-setup(
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
+setuptools.setup(
     name='amazonstoreprice',
     packages=['amazonstoreprice'],
     package_dir={'amazonestoreprice': 'amazonstoreprice'},
-    version='0.1.4',
+    version='0.1.5.1',
     install_requires=['requests', 'beautifulsoup4'],
     description='Find the price on Amazon store starting from url',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author='Alessandro Sbarbati',
     author_email='miriodev@gmail.com',
     url='https://github.com/Mirio/amazonstoreprice',

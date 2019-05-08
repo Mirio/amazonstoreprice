@@ -52,7 +52,10 @@ class AmazonStorePrice:
         :return: bs4(html)
         """
         url = self.normalizeurl(url)
-        req = requests.get(url)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36'
+            ' (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36'}
+        req = requests.get(url, headers=headers)
         if req.status_code == 200:
             return BeautifulSoup(req.text, "html.parser")
         elif req.status_code == 404:
