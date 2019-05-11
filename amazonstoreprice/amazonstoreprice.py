@@ -84,5 +84,9 @@ class AmazonStorePrice:
         """
         body_content = self.getpage(self.normalizeurl(url),
                                     retry_ontemp=retry_ontemp)
-        return self.normalizeprice(body_content.find(
-            "span", {"class": "a-color-price"}).contents[0])
+        try:
+            return self.normalizeprice(body_content.find(
+                "span", {"id": "priceblock_dealprice"}).contents[0])
+        except AttributeError:
+            return self.normalizeprice(body_content.find(
+                "span", {"class": "a-color-price"}).contents[0])

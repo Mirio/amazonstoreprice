@@ -9,7 +9,7 @@ setuptools.setup(
     name='amazonstoreprice',
     packages=['amazonstoreprice'],
     package_dir={'amazonestoreprice': 'amazonstoreprice'},
-    version='0.1.5.1',
+    version='0.1.6',
     install_requires=['requests', 'beautifulsoup4'],
     description='Find the price on Amazon store starting from url',
     long_description=long_description,
